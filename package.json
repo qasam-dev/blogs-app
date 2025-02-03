@@ -1,5 +1,5 @@
 {
-  "name": "vite-project",
+  "name": "Blogs-App",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -16,10 +16,13 @@
     "appwrite": "^17.0.0",
     "html-react-parser": "^5.2.2",
     "react": "^18.3.1",
+    "react-awesome-spinners": "^1.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.54.2",
     "react-redux": "^9.2.0",
     "react-router": "^7.1.5",
+    "react-slick": "^0.30.3",
+    "react-spinners": "^0.15.0",
     "styled-components": "^6.1.14",
     "tailwindcss": "^4.0.3"
   },

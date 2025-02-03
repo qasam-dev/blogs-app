@@ -5,6 +5,7 @@ import authService from "../app/services/auth";
 import { login, logout } from "../helpers/authSlice/authSlice";
 import { Outlet, } from "react-router";
 import { Box } from "../components/Elements";
+import { Ripple } from "react-awesome-spinners";
 
 function Layout() {
     const [loading, setLoading] = useState(true);
@@ -24,12 +25,12 @@ function Layout() {
             .finally(() => setLoading(false))
 
     }, [])
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <Box className="w-full h-screen flex justify-center items-center"><Ripple /></Box>;
 
     return (
         <>
             <Header />
-            <Box style={{ marginTop: "85px" }}>
+            <Box>
                 <Outlet />
             </Box>
             <Footer />

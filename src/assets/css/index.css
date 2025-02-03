@@ -13,6 +13,7 @@
   --extraBold-weight: 800;
 
   --color-theme-color: #7c4ee4;
+  --color-bg-color: #e1ecfe;
   --color-heading-color: #333333;
   --color-text-color: #666666;
   --color-white-color: #ffffff;
@@ -21,8 +22,7 @@
 }
 
 body {
-  background-color: #212121;
-  color: white;
+  background-color: var(--color-text-color);
   width: 100%;
   height: 100vh;
   margin: 0;

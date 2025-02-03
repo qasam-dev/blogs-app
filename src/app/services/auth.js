@@ -4,10 +4,12 @@ import Config from "../config/Config";
 export class AuthService {
   client = new Client();
   account;
+
   constructor() {
     this.client
       .setEndpoint(Config.appwriteUrl)
       .setProject(Config.appwriteProjectId);
+
     this.account = new Account(this.client);
   }
 
@@ -25,7 +27,8 @@ export class AuthService {
         return userAccount;
       }
     } catch (error) {
-      console.log("appwrite Service :: create account:: error", error);
+      console.log("Appwrite Service :: createAccount :: error", error);
+      throw error;
     }
   }
 
@@ -37,7 +40,8 @@ export class AuthService {
       );
       return res;
     } catch (error) {
-      console.log("appwrite Service :: login account:: error", error);
+      console.log("Appwrite Service :: login :: error", error);
+      throw error;
     }
   }
 
@@ -45,15 +49,17 @@ export class AuthService {
     try {
       return await this.account.get();
     } catch (error) {
-      console.log("appwrite Service :: get user :: error", error);
+      console.log("Appwrite serive :: getCurrentUser :: error", error);
     }
+    return null;
   }
 
   async logOut() {
     try {
-      return await this.account.deleteSessions();
+      await this.account.deleteSessions();
     } catch (error) {
-      console.log("appwrite Service :: logout :: error", error);
+      console.log("Appwrite Service :: logOut :: error", error);
+      throw error;
     }
   }
 }

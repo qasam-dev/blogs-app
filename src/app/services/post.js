@@ -80,7 +80,7 @@ export class PostService {
     }
   }
 
-  async getAllPosts(queries = Query.equal("status", ["active"])) {
+  async getAllPosts(queries = [Query.equal("status", "active")]) {
     try {
       return await this.databases.listDocuments(
         Config.appwriteDatabaseId,
